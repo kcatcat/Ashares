@@ -12,12 +12,12 @@ jobs:
        with:
          ref: main
          fetch-depth: 0
-     - name: 检查文件
+     - name: 确认文件存在
        run: |
-         echo "当前目录文件:"
+         echo "=== 当前目录文件 ==="
          ls -la
-         echo "monitor.py 是否存在:"
-         test -f monitor.py && echo "存在" || echo "不存在"
+         echo "=== monitor.py 是否存在 ==="
+         test -f monitor.py && echo "✅ 存在" || echo "❌ 不存在"
      - name: 设置Python
        uses: actions/setup-python@v5
        with:
